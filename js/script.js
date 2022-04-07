@@ -23,27 +23,19 @@ const età = parseInt(prompt("Quanti anni hai?"));
 console.log (età);
 
 /* 3. 0.21 euro al km */
-const prezzo = (chilometri * 0.21);
+let prezzo = (chilometri * 0.21);
 
 console.log (prezzo);
 
 /* 4. 20% minorenni - 5. 40% +65 anni */
-let sconto
-
-if (età < 18){
-  sconto = (prezzo / 100) *80;
+if(età < 18){
+  prezzo = (prezzo / 100) *80;
+} else if(età > 65){
+  prezzo = (prezzo /100) *60;
 } 
 
-if (età > 17) {
-  sconto = prezzo;
-}
+console.log (prezzo);
 
-if (età > 65){
-  sconto = (prezzo /100) *60;
-} 
-
-console.log (sconto);
-
-let prezzofinale = sconto.toFixed(2);
+let prezzofinale = prezzo.toFixed(2);
 
 document.getElementById("soldi").innerHTML = " " + prezzofinale;
